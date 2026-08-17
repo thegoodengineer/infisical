@@ -107,13 +107,7 @@ export const hsmConnectorRoutingFactory = ({ gatewayV2Service, gatewayPoolServic
                 params: args.params
               }
             }),
-          {
-            gatewayId: conn.gatewayId,
-            protocol: GatewayProxyProtocol.Pkcs11,
-            relayHost: conn.relayHost,
-            gateway: conn.gateway,
-            relay: conn.relay
-          }
+          { ...conn, protocol: GatewayProxyProtocol.Pkcs11 }
         );
         if (response.ok) return response.result;
         lastError = { code: response.errorCode, message: response.errorMessage };
@@ -173,13 +167,7 @@ export const hsmConnectorRoutingFactory = ({ gatewayV2Service, gatewayPoolServic
               params: {}
             }
           }),
-        {
-          gatewayId: conn.gatewayId,
-          protocol: GatewayProxyProtocol.Pkcs11,
-          relayHost: conn.relayHost,
-          gateway: conn.gateway,
-          relay: conn.relay
-        }
+        { ...conn, protocol: GatewayProxyProtocol.Pkcs11 }
       );
       if (response.ok) {
         return { gatewayId, ok: true, slotInfo: response.result.slotInfo };

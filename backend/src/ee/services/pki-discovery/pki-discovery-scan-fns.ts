@@ -201,10 +201,7 @@ export const executeScan = async (discoveryId: string, deps: TExecuteScanDeps): 
                 return scanEndpoint("localhost", proxyPort, DEFAULT_SCAN_TIMEOUT, sniHostname);
               },
               {
-                gatewayId: targetGatewayDetails.gatewayId,
-                relayHost: targetGatewayDetails.relayHost,
-                gateway: targetGatewayDetails.gateway,
-                relay: targetGatewayDetails.relay,
+                ...targetGatewayDetails,
                 protocol: GatewayProxyProtocol.Tcp
               }
             );

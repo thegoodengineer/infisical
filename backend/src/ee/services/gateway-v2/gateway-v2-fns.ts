@@ -31,10 +31,7 @@ export const testConnectionWithGateway = async (
       (proxyPort) => callTestConnection({ port: proxyPort, body: request, timeoutMs, signal }),
       {
         protocol: GatewayProxyProtocol.ConnectionTest,
-        gatewayId: platform.gatewayId,
-        relayHost: platform.relayHost,
-        gateway: platform.gateway,
-        relay: platform.relay
+        ...platform
       }
     );
   } catch {

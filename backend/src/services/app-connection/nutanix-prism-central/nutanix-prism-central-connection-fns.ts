@@ -111,6 +111,7 @@ export const executeNutanixOperationWithGateway = async <T>(
       },
       {
         protocol: GatewayProxyProtocol.Tcp,
+        gatewayId: platformConnectionDetails.gatewayId,
         relayHost: platformConnectionDetails.relayHost,
         gateway: platformConnectionDetails.gateway,
         relay: platformConnectionDetails.relay

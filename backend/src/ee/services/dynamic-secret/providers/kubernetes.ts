@@ -76,6 +76,7 @@ export const KubernetesProvider = ({
           );
         },
         {
+          gatewayId: gatewayV2ConnectionDetails.gatewayId,
           relayHost: gatewayV2ConnectionDetails.relayHost,
           gateway: gatewayV2ConnectionDetails.gateway,
           relay: gatewayV2ConnectionDetails.relay,

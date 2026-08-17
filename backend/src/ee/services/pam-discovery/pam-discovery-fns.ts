@@ -44,6 +44,7 @@ export const sshExecWithGateway = async (
     },
     {
       protocol: GatewayProxyProtocol.Discovery,
+      gatewayId: platform.gatewayId,
       relayHost: platform.relayHost,
       gateway: platform.gateway,
       relay: platform.relay
@@ -69,6 +70,7 @@ export const executeWithGateway = async <T>(
 
   return withGatewayV2Proxy((proxyPort) => operation(proxyPort), {
     protocol: GatewayProxyProtocol.Tcp,
+    gatewayId: platform.gatewayId,
     relayHost: platform.relayHost,
     gateway: platform.gateway,
     relay: platform.relay
@@ -228,6 +230,7 @@ export const winrmRpcWithGateway = async <T>({
       }),
     {
       protocol: GatewayProxyProtocol.WinRm,
+      gatewayId: platform.gatewayId,
       relayHost: platform.relayHost,
       gateway: platform.gateway,
       relay: platform.relay
@@ -272,6 +275,7 @@ export const sweepReachableTargets = async (
       }),
     {
       protocol: GatewayProxyProtocol.Discovery,
+      gatewayId: platform.gatewayId,
       relayHost: platform.relayHost,
       gateway: platform.gateway,
       relay: platform.relay,

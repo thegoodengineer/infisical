@@ -71,6 +71,7 @@ const requestWithF5BigIpGateway = async <T>(
       },
       {
         protocol: GatewayProxyProtocol.Tcp,
+        gatewayId: platformConnectionDetails.gatewayId,
         relayHost: platformConnectionDetails.relayHost,
         gateway: platformConnectionDetails.gateway,
         relay: platformConnectionDetails.relay
@@ -218,6 +219,7 @@ export const executeF5BigIpOperationWithGateway = async <T>(
       },
       {
         protocol: GatewayProxyProtocol.Tcp,
+        gatewayId: platformConnectionDetails.gatewayId,
         relayHost: platformConnectionDetails.relayHost,
         gateway: platformConnectionDetails.gateway,
         relay: platformConnectionDetails.relay
